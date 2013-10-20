@@ -1,3 +1,4 @@
+/.idea/
 /web/bundles/
 /app/bootstrap.php.cache
 /app/cache/*
@@ -7,7 +8,6 @@
 !app/logs/.gitkeep
 /build/
 /vendor/
-/bin/
-!bin/deploy
+/bin/doctrine*
 /web/public/js-min
 /web/public/vendor/

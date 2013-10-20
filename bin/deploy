@@ -1,0 +1,17 @@
+#!/bin/sh
+
+git pull
+
+echo 'Update assets version'
+sed -i "s/assets_version: .*/assets_version: `date +%s`/g" "app/config/parameters.yml"
+
+echo 'Update database schema'
+php app/console doctrine:schema:update --force
+
+echo 'build parameters'
+composer run-script post-status-cmd
+
+
+r.js -o web/public/js/tools/build.js paths.facebook=empty:
+
+echo 'Done'
