@@ -1,0 +1,34 @@
+services:
+    twig.extension.text:
+        class: Twig_Extensions_Extension_Text
+        tags:
+        - { name: twig.extension }
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: secured_area
+    user_class: MY\EntityBundle\Entity\User
+    registration:
+        form:
+            name: registration
+
+fos_facebook:
+    alias:  facebook
+    app_id: %facebook_app_id%
+    secret: %facebook_secret%
+    cookie: true
+    permissions: %facebook_permissions%
+
+avalanche_imagine:
+    source_root:  "%upload_target_dir%"
+    web_root:     "%upload_target_dir%"
+    cache_prefix: "media/cache"
+    driver:       "gd"
+    filters:
+        thumbnail_30:
+            type:    thumbnail
+            options: { size: [30, 30], mode: outbound, quality: 100, format: jpg, cache_type: public, cache_expires: 2 weeks }
+
+        resize_100:
+            type:    thumbnail
+            options: { size: [100, 100], mode: outbound, quality: 100, format: jpg, cache_type: public, cache_expires: 2 weeks }

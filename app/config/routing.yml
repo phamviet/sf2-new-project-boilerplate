@@ -1,0 +1,19 @@
+my_rest:
+    resource: "@MYRestBundle/Controller/"
+    type:     annotation
+    prefix:   %route_prefix_rest%
+
+my_admin:
+    resource: "@MYAdminBundle/Controller/"
+    type:     annotation
+    prefix:   %route_prefix_admin%
+
+my_security:
+    resource: "@MYSecurityBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+my_site:
+    resource: "@MYSiteBundle/Controller/"
+    type:     annotation
+    prefix:   /

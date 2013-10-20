@@ -1,0 +1,25 @@
+{% set site_vars = site_vars() %}
+{% set requirejsBaseUrl = app.environment == 'dev' ? 'public/js/app' : 'public/js-min' %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+{% block body %}{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        var SITE = {{ site_vars|json_encode()|raw }};
+        var require = {
+            baseUrl: '{{ requirejsBaseUrl }}'
+        };
+        /*]]>*/
+    </script>
+    <script data-main="{{ asset(requirejsBaseUrl ~ '/main.js') }}" src="{{ asset('public/vendor/requirejs/require.js') }}"></script>
+{% endblock %}
+</body>
+</html>
