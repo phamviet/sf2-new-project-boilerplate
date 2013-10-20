@@ -1,3 +1,13 @@
+parameters:
+    pdo.db_options:
+        db_table:    session
+        db_id_col:   session_id
+        db_data_col: session_value
+        db_time_col: session_time
+
+    security.authentication.failure_handler.class: "MY\SecurityBundle\Security\Http\Authentication\AuthenticationFailureHandler"
+    security.authentication.success_handler.class: "MY\SecurityBundle\Security\Http\Authentication\AuthenticationSuccessHandler"
+
 services:
     twig.extension.text:
         class: Twig_Extensions_Extension_Text
