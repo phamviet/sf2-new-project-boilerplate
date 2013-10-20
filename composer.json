@@ -39,7 +39,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
         ],
         "post-status-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
         ]
     },
     "config": {
