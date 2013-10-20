@@ -1,0 +1,9 @@
+* Usage
+
+    git clone git@github.com:phamviet/sf2-new-project-boilerplate.git project/
+    cd project/
+    composer install
+    php app/console doctrine:database:create
+    php app/console doctrine:schema:create
+    git remote set-url origin ssh://git@bitbucket.org/phamviet/damviet.net.git
+    git push -u origin --all
