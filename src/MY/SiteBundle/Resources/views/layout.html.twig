@@ -14,6 +14,7 @@
     <script type="text/javascript">
         /*<![CDATA[*/
         var SITE = {{ site_vars|json_encode()|raw }};
+        var USER = {{ app.user|json_encode()|raw }};
         var require = {
             baseUrl: '{{ requirejsBaseUrl }}'
         };

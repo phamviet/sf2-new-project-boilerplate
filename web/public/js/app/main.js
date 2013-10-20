@@ -1,6 +1,9 @@
 // r.js -o web/public/js/tools/build.js paths.facebook=empty:
-
 var SITE = SITE || { deps: [], FACEBOOK_APP_ID: '' };
+SITE.url = function(path) {
+    var url = this.BASE_URL + ((path[0] || '') == '/' ? path : '/' + path);
+    return url.replace(/\/\//g,'/');
+};
 
 (function() {
     require.config({
