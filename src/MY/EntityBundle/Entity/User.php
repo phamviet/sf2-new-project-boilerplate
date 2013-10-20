@@ -92,6 +92,23 @@ class User extends BaseUser
     }
 
     /**
+     * @param Array
+     */
+    public function setFBData($fbdata)
+    {
+        if (isset($fbdata['id'])) {
+            $this->setFacebookId($fbdata['id']);
+            $this->addRole('ROLE_FACEBOOK');
+        }
+        if (isset($fbdata['name'])) {
+            $this->setName($fbdata['name']);
+        }
+        if (isset($fbdata['email'])) {
+            $this->setEmail($fbdata['email']);
+        }
+    }
+
+    /**
      * Set facebookId
      *
      * @param integer $facebookId

@@ -1,5 +1,5 @@
 {% set site_vars = site_vars() %}
-{% set requirejsBaseUrl = app.environment == 'dev' ? 'public/js/app' : 'public/js-min' %}
+{% set requirejsBaseUrl = site_vars.BASE_PATH ~ '/public/' ~ (app.environment == 'dev' ? 'js/app' : 'js-min') %}
 <!DOCTYPE html>
 <html>
 <head>
