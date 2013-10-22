@@ -2,11 +2,8 @@
     "name": "My dependencies",
     "version": "1.0.0",
     "dependencies": {
-        "jquery": "1.9.1",
-        "underscore-amd": null,
         "bootstrap": null,
         "select2": "3.4.3",
-        "plupload": null,
-        "requirejs": null
+        "plupload": null
     }
 }

@@ -5,6 +5,7 @@ define([
 ], function($, underscore){
 
 
-    $('body').append('<div>underscore version: ' + underscore.VERSION + '</div>');
+    $('body').append('<h1>It work</h1>');
+
     return {};
 });

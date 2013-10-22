@@ -9,8 +9,10 @@ SITE.url = function(path) {
     require.config({
         waitSeconds: 30,
         paths: {
-            '$': '../../vendor/jquery/jquery.min',
-            underscore: '../../vendor/underscore-amd/underscore-min',
+            '$': '../libs/jquery.min',
+            underscore: '../libs/underscore-min',
+            html5shiv: '../libs/html5shiv',
+            respond: '../libs/respond.min',
             bootstrap: "../../vendor/bootstrap/dist/js/bootstrap.min",
             select2: "../../vendor/select2/select2.min",
             plupload: "../../vendor/plupload/js/plupload.full.min",
@@ -18,7 +20,9 @@ SITE.url = function(path) {
         },
         shim: {
             '$': { exports: '$' },
+
             'plupload': { exports: 'plupload' },
+
             underscore: {
                 exports: '_'
             },
@@ -29,7 +33,8 @@ SITE.url = function(path) {
             'bootstrap': {
                 deps: ['$']
             },
-            'select2': { deps: ["$"] }
+            'select2': { deps: ['$'] },
+            'site/initialize': { deps: ['html5shiv', 'respond'] }
         }
     });
 

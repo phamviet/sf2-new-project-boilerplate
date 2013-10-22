@@ -1,12 +1,14 @@
 {% set site_vars = site_vars() %}
 {% set requirejsBaseUrl = site_vars.BASE_PATH ~ '/public/' ~ (app.environment == 'dev' ? 'js/app' : 'js-min') %}
+{% set requirejsCdn = (app.environment == 'dev' ? asset('public/js/libs/require.js') : '//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.9/require.min.js') %}
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8" />
     <title>{% block title %}Welcome!{% endblock %}</title>
+    <link href="{{ asset('public/vendor/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     {% block stylesheets %}{% endblock %}
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
 {% block body %}{% endblock %}
@@ -20,7 +22,7 @@
         };
         /*]]>*/
     </script>
-    <script data-main="{{ asset(requirejsBaseUrl ~ '/main.js') }}" src="{{ asset('public/vendor/requirejs/require.js') }}"></script>
+    <script data-main="{{ asset(requirejsBaseUrl ~ '/main.js') }}" src="{{ requirejsCdn }}"></script>
 {% endblock %}
 </body>
 </html>

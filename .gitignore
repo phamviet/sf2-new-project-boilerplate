@@ -9,5 +9,5 @@
 /build/
 /vendor/
 /bin/doctrine*
-/web/public/js-min
+/web/public/js-min/
 /web/public/vendor/

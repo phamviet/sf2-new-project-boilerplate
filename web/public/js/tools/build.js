@@ -10,7 +10,9 @@
                 '$',
                 'bootstrap',
                 'select2',
-                'underscore'
+                'underscore',
+                'html5shiv',
+                'respond'
             ]
         },
         {
